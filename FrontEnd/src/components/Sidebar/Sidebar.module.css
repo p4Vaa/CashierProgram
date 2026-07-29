@@ -1,0 +1,278 @@
+.sidebar{
+    width: 20vw;
+    height: 100%;
+    background-color: #0B2036;
+    color: #B7C6D3;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #123651;
+     transition:width .5s ease;
+     overflow: hidden;
+}
+
+.sidebarHide{
+     transition:width .5s ease;
+     width: 4%;
+}
+
+/* ICON SIDEBAR DESIGN */
+.sidebarDIVicon{
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    padding: 10px;
+    color: #f0f8ff;
+    display: flex;
+    align-items: center; gap: 10px;
+    
+}
+
+.title{
+    position: relative;
+    top:5px;
+}
+.icon{
+    cursor: pointer;
+    color: #f0f8ff;
+}
+
+.sidebarIcon{
+    position: absolute;
+    right: 15px;
+    color: azure;
+    cursor: pointer;
+}
+
+/* for Hide and show Sidebar */
+.textHide {
+    display: none;
+    animation: fadeOut 0.4s linear forwards;
+    visibility:hidden;
+}
+.textshow {
+    display: inline;
+    animation: fadeIn 0.7s linear forwards;
+    visibility:visible;
+
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity:0 ;
+        
+    }
+    to {
+        opacity: 1;
+    }
+
+}
+
+.hr{
+    position: absolute;
+    border: 1px solid white;
+    bottom: 0px;
+    width: 90%;
+}
+
+/* UI DESIGN (LIST) */
+.menu{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    list-style-type: none;
+    padding: 0px;
+    gap: 10px;
+    color: #ced8e0;
+}
+
+.item{  
+    border-radius: 4px;
+    height: 45px;
+    width: 90%;
+    
+}
+
+.Link{
+   display: flex;
+    align-items: center;
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+    gap: 9px;
+    transition: all 0.4s;
+    padding: 0px 10px;
+    text-decoration: none;
+    
+}
+.Link:hover {
+    color: #ced8e0;
+    background-color: hsl(211, 66%, 23%);
+}
+.SidebarOptionColor{
+    background-color: transparent;
+    color: #ced8e0;
+}
+.activeOption{
+    color: #ffffff;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: #123651;
+    border-left:6px solid #2F6FED ;
+    padding-left:6px ;
+}
+.activeOption .linkData{
+    font-weight: 800 !important;
+
+}
+.btnSetting{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    border-radius: 4px;
+    height: 45px;
+    width: 90%;
+    background-color: transparent;
+    color: #ced8e0;
+    font-size: 14px;
+    font-weight: 700;
+    gap: 10px;
+    border: none;
+    transition: all 0.7s;
+}
+.btnSetting:hover {
+    background-color: hsl(211, 66%, 23%);
+    color: #0e7bce;
+}
+
+.iconMenu{
+    cursor: pointer;
+}
+.linkData{
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Profile */
+.Profile{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background-color: transparent;
+    border: 2px solid hsl(211, 66%, 19%);
+    border-bottom: none;
+    border-left: none;
+    padding-left: 5px;
+    border-radius: 4px;
+}
+.imgProfileDiv{
+    background-color: #123651;
+    border: 1px solid #0e7bce;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    border-radius:100% ;
+}
+.imgProfile{
+    width: 70%;
+}
+.usrDiv{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    
+}
+.usrname{
+    position: relative;
+    top: 5px;
+    color: #f0f8ff;
+    font-weight: 700;
+}
+.role{
+    color: rgb(79, 79, 79);
+}
+.btnProfileIcon{
+    position: absolute;
+    right: 10px;
+    color: #B7C6D3;
+    transition:  all 0.4s ;
+}
+.btnProfileIconDown{
+    transform: rotateZ(0deg);
+}
+.btnProfileIconUP{
+    transform: rotateZ(540deg) !important;
+}
+
+
+/* Setting Design */
+.setting{
+    width: 220px;
+    height: 250px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 49%;
+    left: 5px;
+    background-color: #0B2036;
+    border:3px solid #123651;
+    border-radius: 14px;
+}
+.userEmailDiv{
+    height: 30px;
+    
+    border-bottom: 1px solid  #123651;
+    font-size: 12px;
+    padding: 5px;
+    color: gray;
+}
+
+
+.profileMenu{
+    padding: 0px;
+    margin: 0px;
+    margin-top: 15px;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+}
+
+.profileMenuli{
+    width: 100%;
+    height: 45px;
+    /* border: 1px solid wheat; */
+    border-radius: 8px;
+}
+.profileMenulink{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    transition: all 0.7s;
+    padding: 0px 14px;
+    gap: 10px;
+    color: #f0f8ff;
+    text-decoration: none;
+}
+
+.profileMenulink:hover{
+    background-color: #123651;
+}
