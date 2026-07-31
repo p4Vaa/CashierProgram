@@ -1,0 +1,120 @@
+.formADD{
+    background-color: #ffffff;
+    width: 30%;
+    height: 65%;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    animation: formAddANI 1s normal;
+}
+
+@keyframes formAddANI {
+    0%{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+.headAddBox{
+    position: relative;
+    top: 10px;
+    height: 60px;
+    width: 100%;
+    padding: 12px;
+}
+.headAddBox h4{
+    font-size: 18px;
+    font-weight: 600;
+}
+.headAddBox span{
+    position: relative;
+    top: -10px;
+    font-size: 12px;
+    color: #8A97A2;
+
+}
+.IconClose{
+    position: absolute;
+    color: #8A97A2;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    transition:  0.7s;
+}
+.IconClose:hover{
+  color: hsl(0, 0%, 6%);
+}
+
+
+.formInputs{
+    position: relative;
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    padding: 15px;
+    gap:12px;
+}
+.eachRow{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.eachRow label{
+    font-size: 14px;
+    font-weight: 600;   
+}
+.eachRow input{
+    height: 45px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding-left: 12px;
+    font-size: 13px;
+}
+.eachRow textarea{
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 120px;
+    max-height: 120px;
+
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding-top: 12px;
+    padding-left: 12px;
+    font-size: 13px;
+}
+.btnAdds{
+    
+    display: flex;
+    width: 100%;
+    gap: 12px;
+    justify-content: end;
+    padding-right: 15px;
+    margin-top: 20px;
+}
+
+.btnAdds button{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 35px !important;
+    width: 90px;
+    border-radius: 2px;
+}
+
+
+
+.editBox{
+    display: inline-block;
+    width: 30px;
+    height: 24px;
+    border-radius: 4px;
+    margin-right: 5px;
+    background-color: rgb(0, 60, 255);
+    color: #f1f5f9;
+    text-align: center;
+}

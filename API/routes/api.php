@@ -9,6 +9,8 @@ Route::get('/admin/categories', [CategoryController::class,"showCategories"]);
 Route::post('/admin/category/add', [CategoryController::class,"addNewCategory"]);
 
 
-Route::delete('/admin/category/delete/{categories}', [CategoryController::class,"setDelete"]);
+Route::put('/admin/category/update/{category}', [CategoryController::class,"updateCategory"]);
+
+Route::delete('/admin/category/delete/{category}', [CategoryController::class,"setDelete"]);
 
 

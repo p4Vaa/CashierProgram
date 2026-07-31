@@ -27,8 +27,7 @@ export function failedMSG(message) {
 }
 
 
-export function cancleForm({setModalAdd}) {
-    console.log(setModalAdd)
+export function cancleForm(modalFun , currentform) {
         Swal.fire({
             title:"Confirmation" ,
             text:"Are You Sure to leave the Form? ",
@@ -39,42 +38,17 @@ export function cancleForm({setModalAdd}) {
             confirmButtonText:"Leave" ,
             confirmButtonColor:"red" ,
         }).then((result)=>{
+                
             if (result.isConfirmed) {
-                console.log(setModalAdd)
-                setModalAdd(prev=>!prev);
-                console.log(setModalAdd)
-                failedMSG("The Process Failed");
+                modalFun(prev=>false);
+                if (currentform =="addModal") {
+                    failedMSG("No Category Added..");
+                }
+               else if ( currentform =="updateModal") {
+                    failedMSG("No Category updated..");
+                }
             }
         });
- }
+    }
 
-export function deletHande(id,category) {
-        Swal.fire({
-            title:"Confirmation" ,
-            text:`Do You wanna delete ${id} ${category}? `,
-            icon:"question" ,
-            showCancelButton:true ,
-            cancelButtonText:"No, Keep it" ,
-            cancelButtonColor:"green" ,
-
-            confirmButtonText:"Delete" ,
-            confirmButtonColor:"red" ,
-        }).then((result)=>{
-            if (result.isConfirmed) {
-                deletHande();
-                Swal.fire({
-                    toast:true,
-                    icon:"success",
-                    timer:2500,
-                    position:"top-right",
-                    title:"Category successfully deleted...",
-                    showConfirmButton:false,
-                    timerProgressBar:true ,
-                    
-                });
-            }
-            else{
-                failedMSG("The Process Failed");
-            }
-        });
- }
+ 

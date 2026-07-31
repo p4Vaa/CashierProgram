@@ -1,0 +1,105 @@
+.LoginPage{
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 30%;
+    height: 70%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+
+}
+
+.box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height:80px;
+    margin:5px 0px;
+    padding-bottom: 5px;
+    padding-left: 12px;
+
+}
+.loginForm label{
+    font-weight: 300;
+    font-size: 13px;
+}
+.loginForm input{
+    width: 95%;
+    height: 40px;
+    padding-left: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+
+
+.ImgDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:  130px;
+    height: 130px;
+    padding: 5px;
+}
+
+.Img{
+    width: 85%;
+    height: 85%;
+}
+
+.Btn{
+    width: 60%;
+    height: 45px;
+    background-color: green;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.7s;
+}
+
+.Btn:hover{
+    background-color:hsl(0, 0%, 0%) ;
+    color: white;
+    border-radius: 14px;
+}
+
+.msgAlert{
+    color: #842029;
+    background-color: #f8d7da;
+    border-color: #f5c2c7;
+    border-radius: 2px;
+    width: 95% !important;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    font-size: 14px;
+}
+
+
+.eyeIcon{
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    cursor: pointer;
+}
+.eyeIcon * {
+    width: 100%;
+    height: 100%;
+}

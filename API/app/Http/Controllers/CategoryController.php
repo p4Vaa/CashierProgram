@@ -27,17 +27,27 @@ class CategoryController extends Controller
     public function addNewCategory(Request $request)
     {
         
-       $categorCheck = Category::create($request->all());
-
-      return  response()->json([
-            "Message"=>"successfull this record added"
-        ]);
+       $categorCheck = Category::create([
+                        "name"=> $request->name,
+                        "description"=>$request->description
+                    ]);
+        if ($categorCheck) {
+            return  response()->json([
+                    "success"=>true,
+                ]);
+        }
+        else{
+            return response()->json([
+                "success"=>false
+            ]);
+        }
+    
     }
 
-    public function setDelete(Request $request, Category $categories)
+    public function setDelete(Request $request, Category $category)
     {
 
-       $result =  $categories->delete();
+       $result =  $category->delete();
        if ($result) {
             return response()->json([
                 "success"=>true
@@ -49,4 +59,27 @@ class CategoryController extends Controller
             ]);
        }
     }
+
+
+    public function updateCategory(Request $request, Category $category){
+        $result = $category->update([
+            "name"=> $request->name,
+            "description"=> $request->description  
+        ]);
+        if ($result) {
+            return response()->json([
+                "success"=>true,
+                "cate"=>$category,
+                "result"=>$result
+            ]);
+        }
+        
+         return response()->json([
+                "success"=>false ,
+                "cate"=>$category,
+                "result"=>$result
+        ]);
+    }
+
+
 }
