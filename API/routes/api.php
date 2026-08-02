@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 Route::middleware("auth:sanctum")->group(function () {
     
     
-    Route::middleware(['auth:sanctum','role:Admin'])->delete('/admin/categories', [CategoryController::class,"showCategories"]);
+    Route::middleware(['auth:sanctum','role:Admin'])->get('/admin/categories', [CategoryController::class,"showCategories"]);
     Route::middleware(['auth:sanctum','role:Admin'])->post('/admin/category/add', [CategoryController::class,"addNewCategory"]);
     Route::middleware(['auth:sanctum','role:Admin'])->put('/admin/category/update/{category}', [CategoryController::class,"updateCategory"]);
     Route::middleware(['auth:sanctum','role:Admin'])->delete('/admin/category/delete/{category}', [CategoryController::class,"setDelete"]);

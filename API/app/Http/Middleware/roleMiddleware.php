@@ -15,9 +15,10 @@ class roleMiddleware
      */
     public function handle(Request $request, Closure $next,$role): Response
     {
-        if($request->user()->role==$role){
+        if($request->user()->role!=$role){
             return response()->json([
-                "message"=>"invalid operation"
+                "message"=>"invalid operation",
+                "role"=>$request->user()->role
             ],403);
         }   
         return $next($request);

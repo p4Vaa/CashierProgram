@@ -6,18 +6,18 @@ import Login from './pages/Auth/Login.jsx';
 import Register from './pages/Auth/register.jsx';
 import Cashier from './pages/Cashier/Cashier.jsx';
 import PrivateRoute from "./components/Routesss/PrivateRoute.jsx";
+import AdminRoute from "./components/Routesss/AdminRoute.jsx";
 function App() {
   const hasUser = localStorage.getItem("user")?JSON.parse(localStorage.getItem("user")):false;
-
   return (
     <>
       <Routes>
         <Route path='/login' element={<Login />}/>
         
         <Route path='/register' element={
-          <PrivateRoute>
+          <AdminRoute>
             <Register/>
-          </PrivateRoute>
+          </AdminRoute>
         }/>
 
 
@@ -32,15 +32,15 @@ function App() {
             </PrivateRoute>
             }/>
 
-          <Route path='admin/dashboard' element={<PrivateRoute></PrivateRoute>}/>
+          <Route path='admin/dashboard' element={<AdminRoute></AdminRoute>}/>
          
           <Route path='admin/categories' element={
-            <PrivateRoute>
+            <AdminRoute >
               <Categories />
-            </PrivateRoute>
+            </AdminRoute>
             }/>
 
-          <Route path='admin/products' element={<PrivateRoute></PrivateRoute>}/>
+          <Route path='admin/products' element={<AdminRoute></AdminRoute>}/>
         </Route>
         
       </Routes>

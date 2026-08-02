@@ -4,9 +4,9 @@ import { useState } from "react";
 import { EyeClosed ,Eye } from 'lucide-react';
 import  {login } from "../../Services/AuthService.js";
 import {error500} from "../../utils/alerts.js";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 export default  function Login() {
-    const navigate = new useNavigate();
+    const navigate = useNavigate();
     const [inputs,setInputs] = useState({
         "email":"",
         "pass":""
@@ -26,13 +26,10 @@ export default  function Login() {
            const res =  await login(inputs);
             localStorage.setItem("token",res.data.token);
             localStorage.setItem("user",JSON.stringify(res.data.user));
-            if(res.data.user.role=="Admin"){
+            if(res.data.user.role==="Admin")
                 navigate('/admin/categories');
-            }
-            else{
+            else
                 navigate('/cashier');
-
-            }
        }
        catch(error) {
             if(error.response){

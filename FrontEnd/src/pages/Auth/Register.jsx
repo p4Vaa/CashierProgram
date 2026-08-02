@@ -24,7 +24,12 @@ export default function Register() {
         const res = await register(data);
         if (res) {
             successMessage("Account Successfuly Create...");
-            
+            setData(prev=>({
+                    "name":"",
+                    "email":"",
+                    "password":"",
+                    "role":"Cashier",
+                }));
         }
         else{
             console.log("something bad Happened :{ ");
