@@ -13,7 +13,5 @@ export const setDelete = (id)=>{
 }
 
 export const updateCategory =  (category)=>{
-    console.log(category.id);
-    console.log(category);
     return API.put(`/admin/category/update/${category.id}`,category);
 }

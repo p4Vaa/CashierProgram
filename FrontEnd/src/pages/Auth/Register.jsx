@@ -4,6 +4,8 @@ import adminImgPath from "../../assets/imges/admin.png";
 import {EyeClosed ,Eye  ,ArrowLeft} from "lucide-react";
 import { useState } from "react";
 import {Link}  from "react-router-dom"
+
+import {register} from "../../Services/AuthService.js";
 export default function Register() {
     const [eyeClose,setEyeClose] = useState(true);
     const [eyeClosed,setEyeClosed] = useState(true);
@@ -13,13 +15,20 @@ export default function Register() {
         "name":"",
         "email":"",
         "password":"",
-        "role":"",
+        "role":"Cashier",
     
     });
 
-    function submitForm(e){
+  async  function submitForm(e){
         e.preventDefault();
-        console.log(data);
+        const res = await register(data);
+        if (res) {
+            console.log(res.data.status);
+            console.log(res.data.user);
+        }
+        else{
+            console.log("something bad Happened :{ ");
+        }
     }
 
     function getData(e){
