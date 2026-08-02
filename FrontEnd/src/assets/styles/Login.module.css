@@ -104,3 +104,8 @@
     height: 100%;
 }
 
+
+.redBorder{
+   color:red;
+    border:1px solid red !important;
+}

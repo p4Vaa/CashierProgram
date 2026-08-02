@@ -52,3 +52,12 @@ export function cancleForm(modalFun , currentform) {
     }
 
  
+export function error500(){
+    Swal.fire({
+        title:"Error",
+        text:"Something Bad happen try Again Latter...",
+        confirmButtonText:"Okey",
+        confirmButtonColor:"green",
+        icon:"error"
+    })
+}

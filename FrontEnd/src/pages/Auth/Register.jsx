@@ -4,7 +4,7 @@ import adminImgPath from "../../assets/imges/admin.png";
 import {EyeClosed ,Eye  ,ArrowLeft} from "lucide-react";
 import { useState } from "react";
 import {Link}  from "react-router-dom"
-
+import { successMessage } from "../../utils/alerts.js";
 import {register} from "../../Services/AuthService.js";
 export default function Register() {
     const [eyeClose,setEyeClose] = useState(true);
@@ -23,8 +23,8 @@ export default function Register() {
         e.preventDefault();
         const res = await register(data);
         if (res) {
-            console.log(res.data.status);
-            console.log(res.data.user);
+            successMessage("Account Successfuly Create...");
+            
         }
         else{
             console.log("something bad Happened :{ ");

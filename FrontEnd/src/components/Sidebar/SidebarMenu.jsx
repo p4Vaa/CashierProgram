@@ -17,11 +17,14 @@ export default function SidebarMenu({isOpen}) {
 
     //check which option is clicked
     const  [activeOption,setActive] =useState("");
-
+    const user =  JSON.parse(localStorage.getItem("user"));
+    const role  = user.role;
         
      
     return (
         <ul className={style.menu}>
+            {
+              role=="Admin" &&  
             <SidebarItem path="/admin/dashboard" 
                     icon={LayoutDashboard}
                     data="Dashboard"
@@ -29,7 +32,9 @@ export default function SidebarMenu({isOpen}) {
                     activeOption={activeOption}
                     setActive={setActive}
                />
-
+            }
+             {
+              role=="Admin" &&   
             <SidebarItem path="/admin/categories" 
                     icon={Boxes}
                     data="Categories"
@@ -37,7 +42,9 @@ export default function SidebarMenu({isOpen}) {
                     activeOption={activeOption}
                     setActive={setActive}
                />
-
+             }
+              {
+              role=="Admin" &&   
             <SidebarItem path="/admin/products" 
                     icon={Package}
                     data="Products"
@@ -45,7 +52,9 @@ export default function SidebarMenu({isOpen}) {
                     activeOption={activeOption}
                     setActive={setActive}
                />
-
+              }
+             {
+            role=="Admin" &&   
             <SidebarItem path="/admin/recyclebin" 
                     icon={Trash}
                     data="recycle bin"
@@ -53,7 +62,9 @@ export default function SidebarMenu({isOpen}) {
                     activeOption={activeOption}
                     setActive={setActive}
                />
-
+             }
+            {
+              role=="Admin" &&  
             <SidebarItem path="/register" 
                     icon={UserPlus}
                     data="Add User"
@@ -62,14 +73,8 @@ export default function SidebarMenu({isOpen}) {
                     setActive={setActive}
                />
 
-            {/* <button type='button' className={`${style.btnSetting}`}>
-                 <Settings  className={style.iconMenu}/>
-                 <span className={`  
-                        
-                         ${isOpen? style.textshow:style.textHide}`}>
-                     Settings
-                 </span>
-            </button>  */}
+            }
+
 
         </ul>
     );   

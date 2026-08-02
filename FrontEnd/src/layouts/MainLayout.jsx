@@ -7,14 +7,14 @@ import {Outlet} from "react-router-dom";
 
 
 
-function AdminLayout() {
+function MainLayout() {
 
     return (
-            <div className={style.AdminLayout}>
+        <div className={style.mainLayout}>
                 <Sidebar />
                 <Outlet />
-            </div>
+        </div>
     );
 }
 
-export default AdminLayout;
+export default MainLayout;

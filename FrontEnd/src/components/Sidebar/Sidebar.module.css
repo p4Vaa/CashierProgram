@@ -3,7 +3,6 @@
     height: 100%;
     background-color: #0B2036;
     color: #B7C6D3;
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -180,8 +179,8 @@
     border-radius: 4px;
 }
 .imgProfileDiv{
-    background-color: #123651;
-    border: 1px solid #0e7bce;
+    background-color: white;
+    border: 2px solid green;
     height: 40px;
     width: 40px;
     display: flex;
@@ -191,7 +190,7 @@
     border-radius:100% ;
 }
 .imgProfile{
-    width: 70%;
+    width: 85%;
 }
 .usrDiv{
     display: flex;
@@ -229,11 +228,12 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 49%;
+    top: 49vh;
     left: 5px;
     background-color: #0B2036;
     border:3px solid #123651;
     border-radius: 14px;
+    z-index: 5;
 }
 .userEmailDiv{
     height: 30px;
