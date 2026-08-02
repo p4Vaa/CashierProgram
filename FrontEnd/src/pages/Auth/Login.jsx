@@ -8,6 +8,7 @@ export default  function Login() {
         "pass":""
     });
 
+    const [alertMsg,setAlertMsg] = useState(false);
     const [eyeClose, setEyeClose] =useState(true);
 
     function submit(e) {
@@ -31,12 +32,14 @@ export default  function Login() {
                     <img src={CashierImg} className={style.Img} />
                 </div>
 
-                <div  className={style.msgAlert} >
-                       <span>
-                        You entered wrong Password and Email
-                       </span>
-                </div>
-                
+                { alertMsg &&
+                    <div  className={style.msgAlert} >
+                        <span>
+                            You entered wrong Password and Email
+                        </span>
+                    </div>
+                    
+                }
 
                 <div className={style.box}>
                     <label htmlFor="email">Email</label>
@@ -54,7 +57,6 @@ export default  function Login() {
                             <EyeClosed />  :
                             <Eye />
                         }
-                        
                     </div>
 
                 </div>

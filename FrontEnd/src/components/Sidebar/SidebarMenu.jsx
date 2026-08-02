@@ -2,7 +2,7 @@ import { useState,useEffect} from 'react';
 import {  useLocation} from "react-router-dom";
 import style from './Sidebar.module.css';
 import SidebarItem from './SidebarItem.jsx';
-import { LayoutDashboard ,Boxes ,Package, Settings,Trash} from 'lucide-react';
+import { LayoutDashboard ,Boxes ,Package, Settings,Trash ,UserPlus} from 'lucide-react';
 
 export default function SidebarMenu({isOpen}) { 
     useEffect(() => {
@@ -49,6 +49,14 @@ export default function SidebarMenu({isOpen}) {
             <SidebarItem path="/admin/recyclebin" 
                     icon={Trash}
                     data="recycle bin"
+                    isOpen={isOpen}
+                    activeOption={activeOption}
+                    setActive={setActive}
+               />
+
+            <SidebarItem path="/register" 
+                    icon={UserPlus}
+                    data="Add User"
                     isOpen={isOpen}
                     activeOption={activeOption}
                     setActive={setActive}

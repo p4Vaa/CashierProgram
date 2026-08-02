@@ -1,0 +1,74 @@
+.RegisterPage{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerForm{
+    width: 35%;
+    height: 85%;
+    border: 1px #ddd solid;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding:15px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+
+}
+
+.imgDiv{
+    width: 130px;
+    height: 130px;
+    border-radius: 100%;
+    align-self: center;
+}
+.imgDiv img{
+    width: 80%;
+    height: 80%;
+}
+
+.box{
+    position: relative;
+    height: 75px;
+    width: 100%;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.box input , .box select{
+    width: 90%;
+    height: 35px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding-left: 12px;
+    padding-right: 20px;
+    transition: all 0.7s;
+
+}
+.box input:hover{
+    background-color: #ddd;
+}
+
+
+.eyeIcon{
+    position: absolute;
+    bottom: 30px;
+    right: 45px;
+    cursor: pointer;
+}
+.eyeIcon * {
+    width: 100%;
+    height: 100%;
+}
+
+
+.myArrow{
+    cursor: pointer;
+    position: absolute;
+    left: 90px;
+    top: 90px;
+}
