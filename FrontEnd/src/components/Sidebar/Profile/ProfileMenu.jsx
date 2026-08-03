@@ -2,13 +2,13 @@ import style from "../Sidebar.module.css"
 import Item from "./ProfileOption.jsx";
 import {UserRoundPen,Settings,LogOut,Bell} from "lucide-react";
 import { useNavigate } from 'react-router-dom';
-
+import {llogout} from "../../../Services/AuthService.js"
 export default function ProfileMenu() {
         
     const navigate =  useNavigate();
     async function logout(){
         try{
-            await logout();
+            await llogout();
             localStorage.removeItem("token");
             localStorage.removeItem("user");
             navigate('/login');

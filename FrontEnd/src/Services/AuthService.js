@@ -8,6 +8,6 @@ export const login = (data)=>{
     return API.post("/login",data);
 }
 
-export const logout = ()=>{
+export const llogout = ()=>{
     return API.post('/logout');
 }
