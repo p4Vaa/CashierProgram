@@ -25,9 +25,18 @@ export function failedMSG(message) {
 
     });
 }
+export const failedAlert = (msg)=>{
+        Swal.fire({
+            title:"Warning" ,
+            text:msg,
+            icon:"warnig" ,
+            showCancelButton:false ,
+            confirmButtonText:"okey" ,
+            confirmButtonColor:"green" ,
+        })
+}
 
-
-export function cancleForm(modalFun , currentform) {
+export function cancleForm(modalFun , currentform,err) {
         Swal.fire({
             title:"Confirmation" ,
             text:"Are You Sure to leave the Form? ",
@@ -42,10 +51,12 @@ export function cancleForm(modalFun , currentform) {
             if (result.isConfirmed) {
                 modalFun(prev=>false);
                 if (currentform =="addModal") {
-                    failedMSG("No Category Added..");
+                    failedMSG("No Added happen..");
+                    err({});
                 }
                else if ( currentform =="updateModal") {
-                    failedMSG("No Category updated..");
+                    failedMSG("No updated Happen");
+                    err({});
                 }
             }
         });

@@ -20,7 +20,6 @@ return new class extends Migration
             $table->decimal('costPrice',10,2);
             $table->decimal('sellPrice',10,2);
             $table->integer('stockQuantity');
-            $table->date('softDelete');
             $table->timestamps();
         });
     }

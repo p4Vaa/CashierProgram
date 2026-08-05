@@ -96,7 +96,7 @@ export default function Categories({}) {
 
     return (
         <>
-            <CommonPage pageTitle="Categories"  btnContent="+ New Category" setAddModal={setAddModal}  >
+            <CommonPage pageTitle="Categories" pageDes="Manages All Available Categories"  btnContent="+ New Category" setAddModal={setAddModal}  >
             <thead className={style.headTable}>
                     <tr>
                         <td>Name</td>

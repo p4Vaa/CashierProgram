@@ -7,59 +7,90 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+
+    public function products()
     {
-        //
+        $products = Product::with('category')->get();
+        return response()->json([
+            "status"=>"success",
+            "products"=>$products 
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function getProduct(Product $product) {
+        $product["category"]= $product->category;
+        if(!$product){
+            return response()->json([
+                "status"=> "error",
+                "product"=>$product
+                ]);
+        }
+        return response()->json([
+            "status"=> "success",
+            "product"=>$product
+        ]); 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    
+    public  function editProduct(Request $request, Product $product){
+         $request->validate([
+            "name"=> "required|min:3|max:30",
+            "barCode"=> "required|min:3|max:30",
+            "unit"=> "required",
+            "sellPrice"=> "required",
+            "costPrice"=> "required",
+            "category_id"=> "required",
+            "stockQuantity"=> "required"
+         ]);
+         $product->update([
+             "name"=> $request->name,
+            "barCode"=> $request->barCode,
+            "unit"=> $request->unit,
+            "sellPrice"=> $request->sellPrice,
+            "costPrice"=> $request->costPrice,
+            "category_id"=> $request->category_id,
+            "stockQuantity"=> $request->stockQuantity
+         ]);
+         return response()->json(["status"=>"success"]);    
+         }
+ 
+
+    public function addProduct(Request $request)
     {
-        //
+        $request->validate([
+            "name"=> "required|min:3|max:30",
+            "barCode"=> "required|unique:products|min:3|max:30",
+            "unit"=> "required",
+            "sellPrice"=> "required",
+            "costPrice"=> "required",
+            "category_id"=> "required",
+            "stockQuantity"=> "required"
+        ]);
+        Product::create([
+            "name"=> $request->name,
+            "barCode"=> $request->barCode,
+            "unit"=> $request->unit,
+            "sellPrice"=> $request->sellPrice,
+            "costPrice"=> $request->costPrice,
+            "category_id"=> $request->category_id,
+            "stockQuantity"=> $request->stockQuantity
+        ]);
+        return response()->json([
+            "status"=> "success",   
+            "message"=> "successfully Added"
+        ]);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Product $product)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Product $product)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Product $product)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
+
     public function del(Product $product)
     {
-        //
+        $product->delete();
+        return response()->json([
+            "status"=> "success"
+        ]);
     }
 }

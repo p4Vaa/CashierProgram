@@ -21,9 +21,6 @@ export default function ModalUpdate({getAllCategories,clearForm,getInputData,set
         setUpdModal(false);
         await getAllCategories();
         clearForm();
-        console.log(res.data.cate);
-        console.log(res.data.result);
-        console.log(res.data.success);
         if(res.data.success){
             successMessage("Category Updated successfully..");
             return;

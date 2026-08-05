@@ -13,4 +13,14 @@ class Product extends Model
     public function seleItems(){
         return  $this->hasMany(Sale_Item::class);
     }
+
+    protected $fillable = [
+            "name",
+            "barCode",
+            "unit",
+            "sellPrice",
+            "costPrice",
+            "category_id",
+            "stockQuantity"
+    ];
 }
